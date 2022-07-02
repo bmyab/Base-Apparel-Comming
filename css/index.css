@@ -1,10 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap');
 :root{
-  --Blue: hsl(223, 87%, 63%);
-  --Pale-Blue: hsl(223, 100%, 88%);
-  --Light-Red: hsl(354, 100%, 66%);
-  --Gray: hsl(0, 0%, 59%);
-  --Very-Dark-Blue: hsl(209, 33%, 12%);
+  --Desaturated-Red: hsl(0, 36%, 70%);
+  --Soft-Red: hsl(0, 93%, 68%);
+  --Dark-Grayish-Red: hsl(0, 6%, 24%);
+  /* --Linear-1, 135deg, from hsl(0, 0%, 100%), to hsl(0, 100%, 98%); */
+  /* --Linear135deg, from hsl(0, 80%, 86%), to hsl(0, 74%, 74%); */
+  --font-family:'Josefin Sans', sans-serif;
 }
 html {
   box-sizing: border-box;
@@ -18,145 +19,146 @@ html {
   padding: 0;
 }
 body{
-  height: 100vh;
   width: 100vw;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 2rem;
-  font-family: 'Libre Franklin', sans-serif;
-  
+  font-size: 1.6rem;
+  font-family: var(--font-family)
 }
 .hero{
-  max-width: 35rem;
-  display: flex;
+  max-width: 50rem;
+  display:flex;
   flex-direction: column;
-  gap: 9rem;
-  text-align: center;
+  gap: 2rem;
 }
-.hero .hero__header .title{
-  font-size: 3rem;
-  color: var(--Gray);
-  font-weight: 300;
-  margin-block: 3rem;
+.hero .hero__logo{
+  width: 40%;
+  margin-left: 2.5rem;
+  margin-bottom: 2rem;
 }
-.hero .hero__header .title span{
-  color: var(--Very-Dark-Blue);
-  font-weight: 700;
-}
-.hero .hero__header .subtitle{
-  margin-block: 3rem;
-  font-size: 1.8rem;
-  font-weight: 300;
-}
-.hero .formulario{
-  margin-block:2rem;
-}
-.hero .formulario input{
-  display: block;
-  width: 100%;
-  border: 1px solid var(--Pale-Blue);
-  border-radius: 2.5rem;
-  padding: 1.5rem 3rem;
-}
-.hero .formulario input:invalid{
-  border: 1px solid red;
-}
-.hero .formulario input::placeholder{
-  color: var(--Pale-Blue);
-}
-.hero .formulario input.error{
-  border: 1px solid red;
-}
-.hero .formulario input.error::placeholder{
-  color: var(--Light-Red);
-}
-.hero .formulario small{
+.hero .hero__image .desktop{
   display: none;
-  color: var(--Light-Red);
-  margin-top: 0.5rem;
-  font-size: 1.3rem;
+}
+.hero .hero__image img{
+  margin: 0 auto;
+  max-width: 50rem;
+  width: 100vw;
+}
+.hero .hero__content{
+  margin: 2.5rem auto;
+  text-align: center;
+  max-width: 35rem;
+}
+.hero .hero__content .hero__title{
+  font-size:4.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.8rem;
+  color: var(--Soft-Red);
   font-weight: 300;
-  font-style: italic;
 }
-.hero .formulario .cta{
+.hero .hero__content .hero__title span{
+  color: var(--Dark-Grayish-Red);
+  font-weight: 500;
+}
+.hero .hero__content .paragraph{
+  margin-block: 2.5rem;
+  color: var(--Desaturated-Red);
+  line-height: 2.5rem;
+  font-weight: 300;
+}
+.hero .hero__content .form{
+  position: relative;
+}
+.hero .hero__content .form input{
+  padding: 1.8rem 2.5rem;
+  border-radius: 3rem;
+  border: 1px solid var(--Desaturated-Red);
   width: 100%;
-  padding: 1.7rem;
-  margin-top: 1rem;
-  background-color: var(--Blue);
-  border: none;
+  margin-bottom: 0.8rem;
+  z-index: -1;
+}
+.hero .hero__content .form input::placeholder{
+  color: var(--Desaturated-Red);
+  font-family: var(--font-family);
+  font-weight: 400;
+}
+.hero .hero__content .form small{
+  color: var(--Soft-Red);
+  opacity: 0;
+}
+.hero .hero__content .form .cta{
   border-radius: 2.5rem;
-  font-weight: 600;
-  cursor: pointer;
-  color: white;
-  box-shadow: 1px 10px 30px -7px var(--Blue);
--webkit-box-shadow: 1px 10px 30px -7px var(--Blue);
--moz-box-shadow: 1px 10px 30px -7px var(--Blue);
-  transition: background-color 0.2s ease-in;
-}
-.hero .formulario .cta:hover{
-  background-color: var(--Pale-Blue);
-}
-.hero__dash img{
-  width: 100%;
-}
-.hero__footer{
-  color: var(--Gray);
-}
-.hero__footer .icons i{
-  color: var(--Blue);
-  font-size: 1.5rem;
-  width: 30px;
-  height: 30px;
-  line-height: 30px;
-  border-radius: 50%;
-  border: 1px solid var(--Pale-Blue);
+  border: none;
+  background: linear-gradient(135deg, #f8bfbf, #ee8c8c);
+  padding: 1.5rem 2.8rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+  box-shadow: 0px 10px 20px 4px rgb(206 151 151 / 40%);
   cursor: pointer;
 }
-.hero__footer .icons i:hover{
-  background-color: var(--Blue);
-  color: white;
+.hero .hero__content .form .cta:hover{
+  opacity: 0.85;
 }
-.hero__footer .icons i:nth-of-type(2){
-  margin-inline: 1rem;
+.hero .hero__content .form .i-error{
+  position: absolute;
+  right: 25%;
+  top: 1.5rem;
+  opacity: 0;
 }
-.hero__footer .copy{
-  margin-top: 3rem;
-  font-size: 1.5rem;
+.hero .hero__content .form.error small{
+  opacity: 1;
 }
-
-@media screen and (min-width:920px) {
+.hero .hero__content .form.error .i-error{
+  opacity: 1;
+}
+@media screen and (min-width:1024px) {
   body{
-    overflow-x: hidden;
+    background-image: url('../assets/images/bg-pattern-desktop.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center 70%;
   }
   .hero{
-    max-width: 80rem;
+    max-width: 100vw;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: 150px 1fr;
+    column-gap: 20rem;
   }
-  .hero__dash{
-    width: 85%;
-    text-align: center;
-    margin: 0 auto;
+  .hero .hero__logo{
+    margin-left: 5rem;
   }
-  .hero .hero__header .title{
-    font-size: 4rem;
+  .hero__image{
+    grid-column: 2 / 3;
+    grid-row: 1 / 3;
   }
-  .hero .formulario{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 100%;
+  .hero__image .mobile{
+    display: none;
+  }
+  .hero .hero__image  .desktop{
+    display: block;
+  }
+  .hero .hero__content{
+    max-width: 45rem;
+    margin-inline-start: 5rem;
+    text-align: left;
+  }
+  .hero .hero__content .hero__title{
+    font-size: 5.5rem;
+  }
+  .hero .hero__content .paragraph{
+    font-weight: 500;
+  }
+  .hero .hero__content .form .cta{
+    padding: 1.5rem 3.8rem;
+    z-index: 1;
+  }
+  .hero .hero__content .form small{
     position: relative;
-  }
-  .hero .formulario input{
-    width: 50%;
-  }
-  .hero .formulario .cta{
-    margin-top: 0;
-    width: 30%;
-  }
-  .hero .formulario small{
-    position: absolute;
-    left: 10%;
-    bottom: -40%;
+    left: 2.5rem;
   }
 }
+

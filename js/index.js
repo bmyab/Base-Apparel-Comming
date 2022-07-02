@@ -1,27 +1,38 @@
-const form= document.getElementById('form');
- 
-form.addEventListener('submit', e =>{
+const formulario = document.getElementById('form');
+form.addEventListener('submit' , e =>{
   e.preventDefault();
 
-  const email = form['email'];
-  const emailValue = email.value;
-  const small = form.querySelector('small');
-
-  if( !emailValue){
-    email.classList.add('error');
-    small.innerText = 'Email field cannot be empty';
-    small.style.display = 'block';
-  }else if( !isValid(emailValue)){
-    email.classList.add('error');
-    small.innerText = 'Please provide a valid email address';
-    small.style.display = 'block';
+  const email = form['email'].value;
+  if( email == ''){
+    addError('email' , 'Email is required');
+  }else if( !isValid(email)){
+    addError('email','Email is not valid');
   }else{
-    email.classList.remove('error');
-    small.style.display= 'none';
+    removeError('email');
   }
-})
+});
 
-function isValid(email){
-  var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+function addError(field , message){
+  const formControl = form[field].parentNode;
+  formControl.classList.add('error')
+  
+  const small = form[field].parentNode.querySelector('small');
+  small.innerText = message;
+
+  const input = form[field].parentNode.querySelector('input');
+  // console.log(input)
+  input.style.border= '2px solid red';
+}
+function removeError(field){
+  const formControl= form[field].parentNode;
+  formControl.classList.remove('error');
+
+  const input = form[field].parentNode.querySelector('input');
+  input.style.border = '1px solid var(--Desaturated-Red)';
+}
+
+
+function isValid(email) {
+	var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 	return re.test(String(email).toLowerCase());
 }

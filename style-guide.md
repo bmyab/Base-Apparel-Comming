@@ -11,33 +11,25 @@ The designs were created to the following widths:
 
 ### Primary
 
-- Blue: hsl(223, 87%, 63%)
-
-### Secondary
-
-- Pale Blue: hsl(223, 100%, 88%)
-- Light Red: hsl(354, 100%, 66%)
+- Desaturated Red: hsl(0, 36%, 70%)
+- Soft Red: hsl(0, 93%, 68%)
 
 ### Neutral
 
-- Gray: hsl(0, 0%, 59%)
-- Very Dark Blue: hsl(209, 33%, 12%)
+- Dark Grayish Red: hsl(0, 6%, 24%)
+
+### Gradients
+
+- Linear, 135deg, from hsl(0, 0%, 100%), to hsl(0, 100%, 98%)
+- Linear, 135deg, from hsl(0, 80%, 86%), to hsl(0, 74%, 74%)
 
 ## Typography
 
 ### Body Copy
 
-- Font size: 20px
+- Font size: 16px
 
-### Fonts
+### Font
 
-- Family: [Libre Franklin](https://fonts.google.com/specimen/Libre+Franklin)
-- Weights: 300, 600, 700
-
-## Icons
-
-For the social icons, you can use a font icon library. Some suggestions can be found below:
-
-- [Font Awesome](https://fontawesome.com)
-- [IcoMoon](https://icomoon.io)
-- [Ionicons](https://ionicons.com)
+- Family: [Josefin Sans](https://fonts.google.com/specimen/Josefin+Sans)
+- Weights: 300, 400, 600

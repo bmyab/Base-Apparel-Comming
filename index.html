@@ -6,36 +6,35 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   
-  <title>Frontend Mentor | Ping coming soon page</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Frontend Mentor | Base Apparel coming soon page</title>
+
   <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
   <main class="hero">
-    <header class="hero__header">
-      <img src="assets/images/logo.svg" alt="Logo Ping">
-      <h1 class="title"> We are launching
-        <span>soon!</span>
-      </h1>
-      <h3 class="subtitle">Subscribe and get notified</h3>
-      <form class="formulario" id="form">
-        <input id="email" type="email" placeholder="Your email address...">
-        <small>Please provide a valid emaill address</small>
-        <button class="cta" type="submit">Notify Me</button>
-      </form>
-    </header>
-    <figure class="hero__dash">
-        <img src="assets/images/illustration-dashboard.png" alt="Dashboard image">
+    <img class="hero__logo" src="assets/images/logo.svg" alt="Logo Appareal">
+    <figure class="hero__image">
+      <img class="mobile" src="assets/images/hero-mobile.jpg" alt="Hero Mobile">
+      <img class="desktop" src="assets/images/hero-desktop.jpg" alt="Hero Mobile">
     </figure>
-    <footer class="hero__footer">
-      <div class="icons">
-        <i class="fa-brands fa-facebook-f"></i>
-        <i class="fa-brands fa-twitter"></i>
-        <i class="fa-brands fa-instagram"></i>
-      </div>
-      <p class="copy">&copy; Copyright Ping. All rights reserved.</p>
-    </footer>
+    <section class="hero__content">
+      <h1 class="hero__title">We're 
+        <span>coming soon</span>
+      </h1>
+      <p class="paragraph">Hello fellow shoppers! We're currently building our new fashion store. 
+        Add your email below to stay up-to-date with announcements and our launch deals.
+      </p>
+      <form id="form" class="form">
+        <input id="email" type="email" placeholder="Email Address">
+        <small>Please provide a valid email</small>
+        <img class="i-error" src="assets/images/icon-error.svg" alt="icon error">
+        <button type="submit" class="cta">
+          <img src="assets/images/icon-arrow.svg" alt="icon arrow">
+        </button>
+      </form>
+    </section> 
   </main>
+  </footer>
 </body>
 <script src="js/index.js"></script>
 </html>
