@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&display=swap');
+:root{
+  --Blue: hsl(223, 87%, 63%);
+  --Pale-Blue: hsl(223, 100%, 88%);
+  --Light-Red: hsl(354, 100%, 66%);
+  --Gray: hsl(0, 0%, 59%);
+  --Very-Dark-Blue: hsl(209, 33%, 12%);
+}
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+body{
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-family: 'Libre Franklin', sans-serif;
+  
+}
+.hero{
+  max-width: 35rem;
+  display: flex;
+  flex-direction: column;
+  gap: 9rem;
+  text-align: center;
+}
+.hero .hero__header .title{
+  font-size: 3rem;
+  color: var(--Gray);
+  font-weight: 300;
+  margin-block: 3rem;
+}
+.hero .hero__header .title span{
+  color: var(--Very-Dark-Blue);
+  font-weight: 700;
+}
+.hero .hero__header .subtitle{
+  margin-block: 3rem;
+  font-size: 1.8rem;
+  font-weight: 300;
+}
+.hero .formulario{
+  margin-block:2rem;
+}
+.hero .formulario input{
+  display: block;
+  width: 100%;
+  border: 1px solid var(--Pale-Blue);
+  border-radius: 2.5rem;
+  padding: 1.5rem 3rem;
+}
+.hero .formulario input:invalid{
+  border: 1px solid red;
+}
+.hero .formulario input::placeholder{
+  color: var(--Pale-Blue);
+}
+.hero .formulario input.error{
+  border: 1px solid red;
+}
+.hero .formulario input.error::placeholder{
+  color: var(--Light-Red);
+}
+.hero .formulario small{
+  display: none;
+  color: var(--Light-Red);
+  margin-top: 0.5rem;
+  font-size: 1.3rem;
+  font-weight: 300;
+  font-style: italic;
+}
+.hero .formulario .cta{
+  width: 100%;
+  padding: 1.7rem;
+  margin-top: 1rem;
+  background-color: var(--Blue);
+  border: none;
+  border-radius: 2.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: white;
+  box-shadow: 1px 10px 30px -7px var(--Blue);
+-webkit-box-shadow: 1px 10px 30px -7px var(--Blue);
+-moz-box-shadow: 1px 10px 30px -7px var(--Blue);
+  transition: background-color 0.2s ease-in;
+}
+.hero .formulario .cta:hover{
+  background-color: var(--Pale-Blue);
+}
+.hero__dash img{
+  width: 100%;
+}
+.hero__footer{
+  color: var(--Gray);
+}
+.hero__footer .icons i{
+  color: var(--Blue);
+  font-size: 1.5rem;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 50%;
+  border: 1px solid var(--Pale-Blue);
+  cursor: pointer;
+}
+.hero__footer .icons i:hover{
+  background-color: var(--Blue);
+  color: white;
+}
+.hero__footer .icons i:nth-of-type(2){
+  margin-inline: 1rem;
+}
+.hero__footer .copy{
+  margin-top: 3rem;
+  font-size: 1.5rem;
+}
+
+@media screen and (min-width:920px) {
+  body{
+    overflow-x: hidden;
+  }
+  .hero{
+    max-width: 80rem;
+  }
+  .hero__dash{
+    width: 85%;
+    text-align: center;
+    margin: 0 auto;
+  }
+  .hero .hero__header .title{
+    font-size: 4rem;
+  }
+  .hero .formulario{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    position: relative;
+  }
+  .hero .formulario input{
+    width: 50%;
+  }
+  .hero .formulario .cta{
+    margin-top: 0;
+    width: 30%;
+  }
+  .hero .formulario small{
+    position: absolute;
+    left: 10%;
+    bottom: -40%;
+  }
+}
